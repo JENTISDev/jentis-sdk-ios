@@ -1,0 +1,48 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/alexandreoliveira/Library/Developer/Xcode/DerivedData/JentisSDK-gqytnfrvkikphlepyxgknqqceisl/Build/Intermediates.noindex/ArchiveIntermediates/JentisSDK/InstallationBuildProductsLocation/Library/Frameworks/JentisSDK.framework/JentisSDK'
+relocations:
+  - { offsetInCU: 0x34, offset: 0x2E66D, size: 0x8, addend: 0x0, symName: _JentisSDKVersionString, symObjAddr: 0x0, symBinAddr: 0x5EF0, symSize: 0x0 }
+  - { offsetInCU: 0x69, offset: 0x2E6A2, size: 0x8, addend: 0x0, symName: _JentisSDKVersionNumber, symObjAddr: 0x30, symBinAddr: 0x5F20, symSize: 0x0 }
+  - { offsetInCU: 0x4F, offset: 0x2E707, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK8SwiftLogC7service33_6A2E80289B40EDC5CC833CAC3C2CE664LLAA7ServiceCvpZ', symObjAddr: 0x158, symBinAddr: 0xC1B0, symSize: 0x0 }
+  - { offsetInCU: 0xB7, offset: 0x2E76F, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK8SwiftLogC7service33_6A2E80289B40EDC5CC833CAC3C2CE664LL_WZ', symObjAddr: 0x0, symBinAddr: 0x4000, symSize: 0x78 }
+  - { offsetInCU: 0x198, offset: 0x2E850, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK8SwiftLogCMa', symObjAddr: 0x10C, symBinAddr: 0x410C, symSize: 0x20 }
+  - { offsetInCU: 0x2A8, offset: 0x2E960, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK8SwiftLogC10saveString_10completionySS_ys6ResultOyyts5Error_pGctFZ', symObjAddr: 0x78, symBinAddr: 0x4078, symSize: 0x7C }
+  - { offsetInCU: 0x2FC, offset: 0x2E9B4, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK8SwiftLogCfd', symObjAddr: 0xF4, symBinAddr: 0x40F4, symSize: 0x8 }
+  - { offsetInCU: 0x321, offset: 0x2E9D9, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK8SwiftLogCfD', symObjAddr: 0xFC, symBinAddr: 0x40FC, symSize: 0x10 }
+  - { offsetInCU: 0x27, offset: 0x2EA34, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC10sendString_10completionySS_ys6ResultOyyts5Error_pGctF', symObjAddr: 0x0, symBinAddr: 0x4138, symSize: 0x4DC }
+  - { offsetInCU: 0xFA, offset: 0x2EB07, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOSQAASQ2eeoiySbx_xtFZTW', symObjAddr: 0x698, symBinAddr: 0x47D0, symSize: 0x14 }
+  - { offsetInCU: 0x178, offset: 0x2EB85, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOSHAASH9hashValueSivgTW', symObjAddr: 0x6AC, symBinAddr: 0x47E4, symSize: 0x44 }
+  - { offsetInCU: 0x25B, offset: 0x2EC68, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOSHAASH4hash4intoys6HasherVz_tFTW', symObjAddr: 0x6F0, symBinAddr: 0x4828, symSize: 0x28 }
+  - { offsetInCU: 0x2FB, offset: 0x2ED08, size: 0x8, addend: 0x0, symName: '_$s10Foundation4DataVSgSo13NSURLResponseCSgs5Error_pSgIeghggg_So6NSDataCSgAGSo7NSErrorCSgIeyBhyyy_TR', symObjAddr: 0x5D0, symBinAddr: 0x4708, symSize: 0xC8 }
+  - { offsetInCU: 0x333, offset: 0x2ED40, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceCMa', symObjAddr: 0x794, symBinAddr: 0x48CC, symSize: 0x20 }
+  - { offsetInCU: 0x347, offset: 0x2ED54, size: 0x8, addend: 0x0, symName: ___swift_instantiateConcreteTypeFromMangledName, symObjAddr: 0x7B4, symBinAddr: 0x48EC, symSize: 0x40 }
+  - { offsetInCU: 0x35B, offset: 0x2ED68, size: 0x8, addend: 0x0, symName: '_$s10Foundation3URLVSgWOh', symObjAddr: 0x7F4, symBinAddr: 0x492C, symSize: 0x40 }
+  - { offsetInCU: 0x36F, offset: 0x2ED7C, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOAEs0D0AAWl', symObjAddr: 0x834, symBinAddr: 0x496C, symSize: 0x44 }
+  - { offsetInCU: 0x4C5, offset: 0x2EED2, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC10sendString_10completionySS_ys6ResultOyyts5Error_pGctFy10Foundation4DataVSg_So13NSURLResponseCSgsAH_pSgtYbcfU_TA', symObjAddr: 0xADC, symBinAddr: 0x4C14, symSize: 0x8 }
+  - { offsetInCU: 0x4D9, offset: 0x2EEE6, size: 0x8, addend: 0x0, symName: _block_copy_helper, symObjAddr: 0xAE4, symBinAddr: 0x4C1C, symSize: 0x10 }
+  - { offsetInCU: 0x4ED, offset: 0x2EEFA, size: 0x8, addend: 0x0, symName: _block_destroy_helper, symObjAddr: 0xAF4, symBinAddr: 0x4C2C, symSize: 0x8 }
+  - { offsetInCU: 0x501, offset: 0x2EF0E, size: 0x8, addend: 0x0, symName: '_$s10Foundation4DataVSgWOe', symObjAddr: 0xAFC, symBinAddr: 0x4C34, symSize: 0x14 }
+  - { offsetInCU: 0x515, offset: 0x2EF22, size: 0x8, addend: 0x0, symName: '_$s10Foundation4DataV15_RepresentationOWOe', symObjAddr: 0xB10, symBinAddr: 0x4C48, symSize: 0x44 }
+  - { offsetInCU: 0x529, offset: 0x2EF36, size: 0x8, addend: 0x0, symName: ___swift_memcpy1_1, symObjAddr: 0xB54, symBinAddr: 0x4C8C, symSize: 0xC }
+  - { offsetInCU: 0x53D, offset: 0x2EF4A, size: 0x8, addend: 0x0, symName: ___swift_noop_void_return, symObjAddr: 0xB60, symBinAddr: 0x4C98, symSize: 0x4 }
+  - { offsetInCU: 0x551, offset: 0x2EF5E, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOwet', symObjAddr: 0xB64, symBinAddr: 0x4C9C, symSize: 0x90 }
+  - { offsetInCU: 0x565, offset: 0x2EF72, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOwst', symObjAddr: 0xBF4, symBinAddr: 0x4D2C, symSize: 0xBC }
+  - { offsetInCU: 0x579, offset: 0x2EF86, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOwug', symObjAddr: 0xCB0, symBinAddr: 0x4DE8, symSize: 0x8 }
+  - { offsetInCU: 0x58D, offset: 0x2EF9A, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOwup', symObjAddr: 0xCB8, symBinAddr: 0x4DF0, symSize: 0x4 }
+  - { offsetInCU: 0x5A1, offset: 0x2EFAE, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOwui', symObjAddr: 0xCBC, symBinAddr: 0x4DF4, symSize: 0x8 }
+  - { offsetInCU: 0x5B5, offset: 0x2EFC2, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOMa', symObjAddr: 0xCC4, symBinAddr: 0x4DFC, symSize: 0x10 }
+  - { offsetInCU: 0x5C9, offset: 0x2EFD6, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOSHAASQWb', symObjAddr: 0xCD4, symBinAddr: 0x4E0C, symSize: 0x4 }
+  - { offsetInCU: 0x5DD, offset: 0x2EFEA, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOAESQAAWl', symObjAddr: 0xCD8, symBinAddr: 0x4E10, symSize: 0x44 }
+  - { offsetInCU: 0x6C6, offset: 0x2F0D3, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOSHAASH13_rawHashValue4seedS2i_tFTW', symObjAddr: 0x718, symBinAddr: 0x4850, symSize: 0x40 }
+  - { offsetInCU: 0x762, offset: 0x2F16F, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOs0D0AAsAFP7_domainSSvgTW', symObjAddr: 0x758, symBinAddr: 0x4890, symSize: 0x4 }
+  - { offsetInCU: 0x77E, offset: 0x2F18B, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOs0D0AAsAFP5_codeSivgTW', symObjAddr: 0x75C, symBinAddr: 0x4894, symSize: 0x4 }
+  - { offsetInCU: 0x79A, offset: 0x2F1A7, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOs0D0AAsAFP9_userInfoyXlSgvgTW', symObjAddr: 0x760, symBinAddr: 0x4898, symSize: 0x4 }
+  - { offsetInCU: 0x7B6, offset: 0x2F1C3, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC0C5ErrorOs0D0AAsAFP19_getEmbeddedNSErroryXlSgyFTW', symObjAddr: 0x764, symBinAddr: 0x489C, symSize: 0x4 }
+  - { offsetInCU: 0x7FC, offset: 0x2F209, size: 0x8, addend: 0x0, symName: '_$sSD17dictionaryLiteralSDyxq_Gx_q_td_tcfCSS_SSTgm5Tf4g_n', symObjAddr: 0x9BC, symBinAddr: 0x4AF4, symSize: 0xFC }
+  - { offsetInCU: 0xA64, offset: 0x2F471, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC10sendString_10completionySS_ys6ResultOyyts5Error_pGctF', symObjAddr: 0x0, symBinAddr: 0x4138, symSize: 0x4DC }
+  - { offsetInCU: 0xBAC, offset: 0x2F5B9, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceC10sendString_10completionySS_ys6ResultOyyts5Error_pGctFy10Foundation4DataVSg_So13NSURLResponseCSgsAH_pSgtYbcfU_', symObjAddr: 0x4DC, symBinAddr: 0x4614, symSize: 0xF4 }
+  - { offsetInCU: 0xCDB, offset: 0x2F6E8, size: 0x8, addend: 0x0, symName: '_$s9JentisSDK7ServiceCfD', symObjAddr: 0x768, symBinAddr: 0x48A0, symSize: 0x2C }
+  - { offsetInCU: 0xD21, offset: 0x2F72E, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4findys10_HashTableV6BucketV6bucket_Sb5foundtxSHRzlFSS_Tg5', symObjAddr: 0x878, symBinAddr: 0x49B0, symSize: 0x64 }
+  - { offsetInCU: 0xD6C, offset: 0x2F779, size: 0x8, addend: 0x0, symName: '_$ss22__RawDictionaryStorageC4find_9hashValues10_HashTableV6BucketV6bucket_Sb5foundtx_SitSHRzlFSS_Tg5', symObjAddr: 0x8DC, symBinAddr: 0x4A14, symSize: 0xE0 }
+...
