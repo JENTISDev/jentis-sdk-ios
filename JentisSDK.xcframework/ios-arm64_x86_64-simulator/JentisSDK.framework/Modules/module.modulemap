@@ -1,0 +1,6 @@
+framework module JentisSDK {
+  umbrella header "JentisSDK.h"
+  export *
+
+  module * { export * }
+}
