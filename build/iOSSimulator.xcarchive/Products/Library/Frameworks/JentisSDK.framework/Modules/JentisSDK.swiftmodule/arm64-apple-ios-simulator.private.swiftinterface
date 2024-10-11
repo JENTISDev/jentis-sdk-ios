@@ -7,7 +7,9 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_hasMissingDesignatedInitializers public class SwiftLog {
-  public static func saveString(_ string: Swift.String, completion: @escaping (Swift.Result<Swift.Void, any Swift.Error>) -> Swift.Void)
+@_hasMissingDesignatedInitializers public class TrackingService {
+  #if compiler(>=5.3) && $AsyncAwait
+  public static func saveString(_ string: Swift.String) async throws
+  #endif
   @objc deinit
 }
