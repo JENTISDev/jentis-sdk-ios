@@ -14,23 +14,23 @@
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		G13rgbFDaCF78pCheepFonGGkTY=
+		h4wQzYcZ8T6dojcD8jcJoFsSh64=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		XcRxbIRGkhndm89bzlOU0Wmgz7g=
+		NckkfNImSkld1a3jRjddZOO6f40=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		y9MCcmfKlQnmR3pj74av46TnLnQ=
+		w43wLPjjZ66CYSSqyr3bNCphw3s=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		XcRxbIRGkhndm89bzlOU0Wmgz7g=
+		NckkfNImSkld1a3jRjddZOO6f40=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		WtXIe4Ker1jUEhsMOIEpn4SMJTg=
+		EHbBv6qBZevR4t4CpO4InaloIac=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -50,35 +50,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2qXWV5K1I7UI8uf9etYK2t7fYjsyOydbq/PHCiuInHg=
+			8K0A2EIMeyvLLJkxb3dhbQ0plq/dax8al4JP1siT8Wk=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			twtsx2rMk1REs3TLtPeiwh+X3/AsvBYfXlUcFcSmLJk=
+			29KyqucG6QtK2gSmMVcT5mzuSQfuALUCOUUGGwkPWvg=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MBTExG7QbtX9K57oLZAg015S+oSJa4YIFRvHAhYpPc0=
+			lwcZB0WeW3pCVqSCppSYX1Ve4RQYRJ7q3FHNmomBSv8=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			twtsx2rMk1REs3TLtPeiwh+X3/AsvBYfXlUcFcSmLJk=
+			29KyqucG6QtK2gSmMVcT5mzuSQfuALUCOUUGGwkPWvg=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			JZiEUGOg4n2+I4AVYAXLEtJP/k1N/1cehvB6EJ0Z/Ng=
+			/wIlVUmXtbIMxX00dJGTUBD98ElpJ8Xm2EVPDAKBLws=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
