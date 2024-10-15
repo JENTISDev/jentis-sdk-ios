@@ -18,6 +18,8 @@
 		96FBA5BA2CB8FE970045C096 /* ConsentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5B92CB8FE970045C096 /* ConsentModel.swift */; };
 		96FBA5BC2CB8FFB90045C096 /* DataSubmissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5BB2CB8FFB90045C096 /* DataSubmissionModel.swift */; };
 		96FBA5BF2CB903F20045C096 /* UserAgentUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5BE2CB903F20045C096 /* UserAgentUtility.swift */; };
+		96FBA5C12CBE1DCD0045C096 /* ConsentIDUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5C02CBE1DCD0045C096 /* ConsentIDUtility.swift */; };
+		96FBA5C32CBE1F3E0045C096 /* UserIDUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5C22CBE1F3E0045C096 /* UserIDUtility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		96FBA5B92CB8FE970045C096 /* ConsentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentModel.swift; sourceTree = "<group>"; };
 		96FBA5BB2CB8FFB90045C096 /* DataSubmissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSubmissionModel.swift; sourceTree = "<group>"; };
 		96FBA5BE2CB903F20045C096 /* UserAgentUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgentUtility.swift; sourceTree = "<group>"; };
+		96FBA5C02CBE1DCD0045C096 /* ConsentIDUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentIDUtility.swift; sourceTree = "<group>"; };
+		96FBA5C22CBE1F3E0045C096 /* UserIDUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIDUtility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				96FBA5BE2CB903F20045C096 /* UserAgentUtility.swift */,
+				96FBA5C02CBE1DCD0045C096 /* ConsentIDUtility.swift */,
+				96FBA5C22CBE1F3E0045C096 /* UserIDUtility.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -233,9 +239,11 @@
 			files = (
 				96FBA5BC2CB8FFB90045C096 /* DataSubmissionModel.swift in Sources */,
 				96FBA5BA2CB8FE970045C096 /* ConsentModel.swift in Sources */,
+				96FBA5C12CBE1DCD0045C096 /* ConsentIDUtility.swift in Sources */,
 				967214762CB3FBB600570B9D /* TrackingService.swift in Sources */,
 				96FBA5BF2CB903F20045C096 /* UserAgentUtility.swift in Sources */,
 				9672145E2CB3FA3500570B9D /* JentisSDK.docc in Sources */,
+				96FBA5C32CBE1F3E0045C096 /* UserIDUtility.swift in Sources */,
 				967214742CB3FB7200570B9D /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
