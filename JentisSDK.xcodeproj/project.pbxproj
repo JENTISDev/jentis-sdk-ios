@@ -15,6 +15,7 @@
 		967214762CB3FBB600570B9D /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214752CB3FBB600570B9D /* TrackingService.swift */; };
 		967214782CB3FF0400570B9D /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214772CB3FF0400570B9D /* MockURLProtocol.swift */; };
 		9672147A2CB3FF2400570B9D /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214792CB3FF2400570B9D /* ServiceTests.swift */; };
+		96E9AD6C2CC7149500B973D7 /* TrackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9AD6B2CC7149400B973D7 /* TrackConfig.swift */; };
 		96FBA5BA2CB8FE970045C096 /* ConsentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5B92CB8FE970045C096 /* ConsentModel.swift */; };
 		96FBA5BC2CB8FFB90045C096 /* DataSubmissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5BB2CB8FFB90045C096 /* DataSubmissionModel.swift */; };
 		96FBA5BF2CB903F20045C096 /* UserAgentUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5BE2CB903F20045C096 /* UserAgentUtility.swift */; };
@@ -42,6 +43,7 @@
 		967214752CB3FBB600570B9D /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
 		967214772CB3FF0400570B9D /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
 		967214792CB3FF2400570B9D /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
+		96E9AD6B2CC7149400B973D7 /* TrackConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackConfig.swift; sourceTree = "<group>"; };
 		96FBA5B92CB8FE970045C096 /* ConsentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentModel.swift; sourceTree = "<group>"; };
 		96FBA5BB2CB8FFB90045C096 /* DataSubmissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSubmissionModel.swift; sourceTree = "<group>"; };
 		96FBA5BE2CB903F20045C096 /* UserAgentUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgentUtility.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		9672145B2CB3FA3500570B9D /* JentisSDK */ = {
 			isa = PBXGroup;
 			children = (
+				96E9AD6B2CC7149400B973D7 /* TrackConfig.swift */,
 				96FBA5BD2CB903E80045C096 /* Utilities */,
 				96FBA5B82CB8FE8D0045C096 /* Model */,
 				9672145C2CB3FA3500570B9D /* JentisSDK.h */,
@@ -186,7 +189,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1540;
-				LastUpgradeCheck = 1540;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					967214582CB3FA3500570B9D = {
 						CreatedOnToolsVersion = 15.4;
@@ -239,6 +242,7 @@
 			files = (
 				96FBA5BC2CB8FFB90045C096 /* DataSubmissionModel.swift in Sources */,
 				96FBA5BA2CB8FE970045C096 /* ConsentModel.swift in Sources */,
+				96E9AD6C2CC7149500B973D7 /* TrackConfig.swift in Sources */,
 				96FBA5C12CBE1DCD0045C096 /* ConsentIDUtility.swift in Sources */,
 				967214762CB3FBB600570B9D /* TrackingService.swift in Sources */,
 				96FBA5BF2CB903F20045C096 /* UserAgentUtility.swift in Sources */,
@@ -398,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -432,6 +437,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -465,7 +471,6 @@
 		967214712CB3FA3500570B9D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P88DR85ZT4;
@@ -483,7 +488,6 @@
 		967214722CB3FA3500570B9D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = P88DR85ZT4;

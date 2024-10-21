@@ -11,12 +11,17 @@ import XCTest
 class JentisSDKTests: XCTestCase {
 
     // MARK: - Properties
-    private var sut: TrackingService.Type!
+    private var sut: TrackingService!
 
     // MARK: - Setup and Teardown
     override func setUpWithError() throws {
         try super.setUpWithError()
-        sut = TrackingService.self
+        
+        // Initialize TrackConfig
+        let config = TrackConfig(trackDomain: "testDomain", trackID: "testID", environment: .live)
+        
+        // Initialize the TrackingService singleton with the config
+        sut = TrackingService.shared(config: config)
     }
     
     override func tearDownWithError() throws {

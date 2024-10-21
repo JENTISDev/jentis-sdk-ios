@@ -8,26 +8,42 @@
 import Foundation
 
 public class TrackingService {
+
+    // The shared instance of the singleton
+    private static var instance: TrackingService?
     
-    private static let service = Service()
-    private static let userAgent = UserAgentUtility.userAgent
-    private static let consentUtility = ConsentIDUtility()
-    private static let userIDUtility = UserIDUtility()
-    
+    public static func shared(config: TrackConfig) -> TrackingService {
+        if instance == nil {
+            instance = TrackingService(config: config)
+        }
+        return instance!
+    }
+
+    private let trackConfig: TrackConfig
+    private let service = Service()
+    private let userAgent = UserAgentUtility.userAgent
+    private let consentUtility = ConsentIDUtility()
+    private let userIDUtility = UserIDUtility()
+
+    // Private initializer with TrackConfig
+    private init(config: TrackConfig) {
+        self.trackConfig = config
+    }
+
     /// Saves a string to the server via the provided API.
     /// - Parameter string: The string to be saved.
-    public static func saveString(_ string: String) async throws {
+    public func saveString(_ string: String) async throws {
         try await service.sendString(string)
     }
-    
+
     /// Sends ConsentModel to the server via the provided API.
-    public static func sendConsentModel() async throws {
+    public func sendConsentModel() async throws {
         // Retrieve the Consent ID using the ConsentIDUtility
         let consentID = consentUtility.getConsentID()
-        
+
         // Retrieve the User ID using the UserIDUtility
         let userID = userIDUtility.getUserID()
-        
+
         let consentModel = ConsentModel(
             system: ConsentModel.System(
                 type: "app",
@@ -36,8 +52,8 @@ public class TrackingService {
                 initiator: "jts_push_submit"
             ),
             configuration: ConsentModel.Configuration(
-                container: "ckion-demo",
-                environment: "live",
+                container: trackConfig.trackDomain, // Using trackConfig's trackDomain
+                environment: trackConfig.environment.rawValue, // Using trackConfig's environment
                 version: "3",
                 debugcode: "a675b5f1-48d2-43bf-b314-ba4830cda52d"
             ),
@@ -69,12 +85,12 @@ public class TrackingService {
         
         try await service.sendConsent(consentModel)
     }
-    
+
     /// Sends DataSubmissionModel to the server via the provided API.
-    public static func sendDataSubmissionModel() async throws {
+    public func sendDataSubmissionModel() async throws {
         // Retrieve the User ID using the UserIDUtility
         let userID = userIDUtility.getUserID()
-        
+
         let dataSubmissionModel = DataSubmissionModel(
             system: DataSubmissionModel.System(
                 type: "app",
@@ -88,8 +104,8 @@ public class TrackingService {
                 awin: DataSubmissionModel.Consent.Vendor(status: .bool(false))
             ),
             configuration: DataSubmissionModel.Configuration(
-                container: "ckion-demo",
-                environment: "live",
+                container: trackConfig.trackDomain, // Using trackConfig's trackDomain
+                environment: trackConfig.environment.rawValue, // Using trackConfig's environment
                 version: "3",
                 debugcode: "a675b5f1-48d2-43bf-b314-ba4830cda52d"
             ),
