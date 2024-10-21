@@ -16,12 +16,15 @@ class JentisSDKTests: XCTestCase {
     // MARK: - Setup and Teardown
     override func setUpWithError() throws {
         try super.setUpWithError()
-        
+
         // Initialize TrackConfig
         let config = TrackConfig(trackDomain: "testDomain", trackID: "testID", environment: .live)
-        
-        // Initialize the TrackingService singleton with the config
-        sut = TrackingService.shared(config: config)
+
+        // Configure the JentisSDK (which initializes TrackingService)
+        JentisService.configure(with: config)
+
+        // Access the shared instance of TrackingService
+        sut = TrackingService.shared
     }
     
     override func tearDownWithError() throws {
