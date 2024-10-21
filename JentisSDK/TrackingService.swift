@@ -11,6 +11,8 @@ public class TrackingService {
     
     private static let service = Service()
     private static let userAgent = UserAgentUtility.userAgent
+    private static let consentUtility = ConsentIDUtility()
+    private static let userIDUtility = UserIDUtility()
     
     /// Saves a string to the server via the provided API.
     /// - Parameter string: The string to be saved.
@@ -20,6 +22,12 @@ public class TrackingService {
     
     /// Sends ConsentModel to the server via the provided API.
     public static func sendConsentModel() async throws {
+        // Retrieve the Consent ID using the ConsentIDUtility
+        let consentID = consentUtility.getConsentID()
+        
+        // Retrieve the User ID using the UserIDUtility
+        let userID = userIDUtility.getUserID()
+        
         let consentModel = ConsentModel(
             system: ConsentModel.System(
                 type: "app",
@@ -36,11 +44,11 @@ public class TrackingService {
             data: ConsentModel.DataClass(
                 identifier: ConsentModel.DataClass.Identifier(
                     user: ConsentModel.DataClass.Identifier.User(
-                        id: "56444171100984962767674",
+                        id: userID, // Replacing hardcoded User ID with generated User ID
                         action: "new"
                     ),
                     consent: ConsentModel.DataClass.Identifier.ConsentID(
-                        id: "d40cfeb0-9526-43d7-96d3-02d5ae65df67",
+                        id: consentID, // Replacing hardcoded ID with generated Consent ID
                         action: "new"
                     )
                 ),
@@ -64,6 +72,9 @@ public class TrackingService {
     
     /// Sends DataSubmissionModel to the server via the provided API.
     public static func sendDataSubmissionModel() async throws {
+        // Retrieve the User ID using the UserIDUtility
+        let userID = userIDUtility.getUserID()
+        
         let dataSubmissionModel = DataSubmissionModel(
             system: DataSubmissionModel.System(
                 type: "app",
@@ -85,7 +96,7 @@ public class TrackingService {
             data: DataSubmissionModel.DataClass(
                 identifier: DataSubmissionModel.DataClass.Identifier(
                     user: DataSubmissionModel.DataClass.Identifier.User(
-                        id: "56444171100984962767674",
+                        id: userID, // Replacing hardcoded User ID with generated User ID
                         action: "new"
                     ),
                     session: DataSubmissionModel.DataClass.Identifier.Session(
