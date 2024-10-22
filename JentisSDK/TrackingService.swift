@@ -65,15 +65,13 @@ public class TrackingService {
         
         let consentID = consentUtility.getConsentID()
         let userID = userIDUtility.getUserID()
-        let sessionID = SessionManager.startOrResumeSession()
         
         let consentModel = ConsentModel(
             system: ConsentModel.System(
                 type: Config.Tracking.systemEnvironment,
                 timestamp: TimestampUtility.currentTimestampInMillis(),
                 navigatorUserAgent: userAgent,
-                initiator: Config.Tracking.pluginId,
-                sessionID: sessionID
+                initiator: Config.Tracking.pluginId
             ),
             configuration: ConsentModel.Configuration(
                 container: trackConfig.container,
