@@ -29,8 +29,8 @@ public class TrackConfig: Codable {
     // UserDefaults key for persisting TrackConfig
     private static let configKey = "com.jentis.TrackConfig"
 
-    // Private initializer to prevent direct instantiation
-    private init(trackDomain: String, container: String, environment: Environment, version: String?, debugCode: String?) {
+    // Public initializer to allow external instantiation if needed
+    public init(trackDomain: String, container: String, environment: Environment, version: String?, debugCode: String?) {
         self.trackDomain = trackDomain
         self.container = container
         self.environment = environment
@@ -84,4 +84,3 @@ public class TrackConfig: Codable {
         LoggerUtility.shared.logInfo("TrackConfig removed from UserDefaults.")
     }
 }
-
