@@ -34,26 +34,35 @@ class JentisSDKTests: XCTestCase {
 
     // MARK: - Tests
 
-    func testSaveStringSuccess() async throws {
-        let mockString = "Test string"
-        
+    func testSendConsentModelSuccess() async throws {
+        // Expectation: sendConsentModel should succeed without throwing an error
         do {
-            try await sut.saveString(mockString)
-            // Success path
+            try await sut.sendConsentModel()
+            // Success path, no error thrown
         } catch {
-            XCTFail("Expected success but got failure with error: \(error)")
+            XCTFail("Expected success but got error: \(error)")
         }
     }
     
-    func testSaveStringFailsWithEmptyInput() async throws {
-        let invalidString = "" // Invalid input for testing
-
+    func testSendDataSubmissionModelSuccess() async throws {
+        // Expectation: sendDataSubmissionModel should succeed without throwing an error
         do {
-            try await sut.saveString(invalidString)
-            XCTFail("Expected failure but got success.")
+            try await sut.sendDataSubmissionModel()
+            // Success path, no error thrown
         } catch {
-            // Ensure error is received
-            XCTAssertNotNil(error, "Expected an error but got nil.")
+            XCTFail("Expected success but got error: \(error)")
         }
+    }
+    
+    func testSessionManagement() {
+        // Test if the session is properly managed
+        let sessionID = SessionManager.startOrResumeSession()
+        
+        XCTAssertNotNil(sessionID, "Expected a session ID but got nil")
+        XCTAssertEqual(sessionID.count, 36, "Expected session ID to be a UUID of 36 characters")
+        
+        // Ensure the session is resumed if timeout hasn't occurred
+        let resumedSessionID = SessionManager.startOrResumeSession()
+        XCTAssertEqual(sessionID, resumedSessionID, "Expected the session to be resumed with the same ID")
     }
 }

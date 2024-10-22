@@ -19,11 +19,13 @@ struct ConsentModel: Codable {
         let timestamp: Int
         let navigatorUserAgent: String
         let initiator: String
+        let sessionID: String
         
         enum CodingKeys: String, CodingKey {
             case type, timestamp
             case navigatorUserAgent = "navigator-userAgent"
             case initiator
+            case sessionID
         }
     }
     

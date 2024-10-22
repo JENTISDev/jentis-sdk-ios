@@ -17,6 +17,8 @@
 		9672147A2CB3FF2400570B9D /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214792CB3FF2400570B9D /* ServiceTests.swift */; };
 		96E9AD6C2CC7149500B973D7 /* TrackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9AD6B2CC7149400B973D7 /* TrackConfig.swift */; };
 		96E9AD6E2CC71F7000B973D7 /* TimestampUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9AD6D2CC71F6F00B973D7 /* TimestampUtility.swift */; };
+		96E9AD702CC7202300B973D7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9AD6F2CC7202200B973D7 /* Config.swift */; };
+		96E9AD722CC720A300B973D7 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9AD712CC720A300B973D7 /* SessionManager.swift */; };
 		96FBA5BA2CB8FE970045C096 /* ConsentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5B92CB8FE970045C096 /* ConsentModel.swift */; };
 		96FBA5BC2CB8FFB90045C096 /* DataSubmissionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5BB2CB8FFB90045C096 /* DataSubmissionModel.swift */; };
 		96FBA5BF2CB903F20045C096 /* UserAgentUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FBA5BE2CB903F20045C096 /* UserAgentUtility.swift */; };
@@ -46,6 +48,8 @@
 		967214792CB3FF2400570B9D /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		96E9AD6B2CC7149400B973D7 /* TrackConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackConfig.swift; sourceTree = "<group>"; };
 		96E9AD6D2CC71F6F00B973D7 /* TimestampUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampUtility.swift; sourceTree = "<group>"; };
+		96E9AD6F2CC7202200B973D7 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		96E9AD712CC720A300B973D7 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		96FBA5B92CB8FE970045C096 /* ConsentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentModel.swift; sourceTree = "<group>"; };
 		96FBA5BB2CB8FFB90045C096 /* DataSubmissionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSubmissionModel.swift; sourceTree = "<group>"; };
 		96FBA5BE2CB903F20045C096 /* UserAgentUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAgentUtility.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		9672145B2CB3FA3500570B9D /* JentisSDK */ = {
 			isa = PBXGroup;
 			children = (
+				96E9AD712CC720A300B973D7 /* SessionManager.swift */,
+				96E9AD6F2CC7202200B973D7 /* Config.swift */,
 				96E9AD6B2CC7149400B973D7 /* TrackConfig.swift */,
 				96FBA5BD2CB903E80045C096 /* Utilities */,
 				96FBA5B82CB8FE8D0045C096 /* Model */,
@@ -245,8 +251,10 @@
 			files = (
 				96FBA5BC2CB8FFB90045C096 /* DataSubmissionModel.swift in Sources */,
 				96FBA5BA2CB8FE970045C096 /* ConsentModel.swift in Sources */,
+				96E9AD722CC720A300B973D7 /* SessionManager.swift in Sources */,
 				96E9AD6C2CC7149500B973D7 /* TrackConfig.swift in Sources */,
 				96FBA5C12CBE1DCD0045C096 /* ConsentIDUtility.swift in Sources */,
+				96E9AD702CC7202300B973D7 /* Config.swift in Sources */,
 				967214762CB3FBB600570B9D /* TrackingService.swift in Sources */,
 				96FBA5BF2CB903F20045C096 /* UserAgentUtility.swift in Sources */,
 				9672145E2CB3FA3500570B9D /* JentisSDK.docc in Sources */,

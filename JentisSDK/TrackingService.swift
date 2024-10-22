@@ -8,20 +8,15 @@
 import Foundation
 
 public class JentisService {
-
-    // Configure method similar to FirebaseApp.configure()
     public static func configure(with config: TrackConfig) {
-        // Initialize the TrackingService with the provided config
         TrackingService.initialize(with: config)
+        SessionManager.startObservingAppLifecycle()
     }
 }
 
 public class TrackingService {
-
-    // The shared instance of the singleton
     private static var instance: TrackingService?
-
-    // Public method to initialize the service, but prevents direct instantiation from outside
+    
     public static func initialize(with config: TrackConfig) {
         guard instance == nil else {
             print("TrackingService is already initialized")
@@ -29,43 +24,36 @@ public class TrackingService {
         }
         instance = TrackingService(config: config)
     }
-
-    // Access the singleton instance, after initialization
+    
     public static var shared: TrackingService {
         guard let instance = instance else {
             fatalError("TrackingService is not initialized. Call JentisService.configure(with:) first.")
         }
         return instance
     }
-
-    // Private properties and dependencies
+    
     private let trackConfig: TrackConfig
     private let service = Service()
     private let userAgent = UserAgentUtility.userAgent
     private let consentUtility = ConsentIDUtility()
     private let userIDUtility = UserIDUtility()
-
-    // Private initializer with TrackConfig to prevent external instantiation
+    
     private init(config: TrackConfig) {
         self.trackConfig = config
     }
-
-    /// Saves a string to the server via the provided API.
-    public func saveString(_ string: String) async throws {
-        try await service.sendString(string)
-    }
-
-    /// Sends ConsentModel to the server via the provided API.
+    
     public func sendConsentModel() async throws {
         let consentID = consentUtility.getConsentID()
         let userID = userIDUtility.getUserID()
-
+        let sessionID = SessionManager.startOrResumeSession()
+        
         let consentModel = ConsentModel(
             system: ConsentModel.System(
-                type: "app",
+                type: Config.Tracking.systemEnvironment,
                 timestamp: TimestampUtility.currentTimestampInMillis(),
                 navigatorUserAgent: userAgent,
-                initiator: "jts_push_submit"
+                initiator: Config.Tracking.pluginId,
+                sessionID: sessionID
             ),
             configuration: ConsentModel.Configuration(
                 container: trackConfig.trackDomain,
@@ -77,11 +65,11 @@ public class TrackingService {
                 identifier: ConsentModel.DataClass.Identifier(
                     user: ConsentModel.DataClass.Identifier.User(
                         id: userID,
-                        action: "new"
+                        action: Config.Action.new.rawValue
                     ),
                     consent: ConsentModel.DataClass.Identifier.ConsentID(
                         id: consentID,
-                        action: "new"
+                        action: Config.Action.new.rawValue
                     )
                 ),
                 consent: ConsentModel.DataClass.Consent(
@@ -101,17 +89,18 @@ public class TrackingService {
         
         try await service.sendConsent(consentModel)
     }
-
-    /// Sends DataSubmissionModel to the server via the provided API.
+    
     public func sendDataSubmissionModel() async throws {
         let userID = userIDUtility.getUserID()
-
+        let sessionID = SessionManager.startOrResumeSession()
+        
         let dataSubmissionModel = DataSubmissionModel(
             system: DataSubmissionModel.System(
-                type: "app",
+                type: Config.Tracking.systemEnvironment,
                 timestamp: TimestampUtility.currentTimestampInMillis(),
                 navigatorUserAgent: userAgent,
-                initiator: "jts_push_submit"
+                initiator: Config.Tracking.pluginId,
+                sessionID: sessionID
             ),
             consent: DataSubmissionModel.Consent(
                 googleAnalytics: DataSubmissionModel.Consent.Vendor(status: .string("ncm")),
@@ -128,17 +117,17 @@ public class TrackingService {
                 identifier: DataSubmissionModel.DataClass.Identifier(
                     user: DataSubmissionModel.DataClass.Identifier.User(
                         id: userID,
-                        action: "new"
+                        action: Config.Action.new.rawValue
                     ),
                     session: DataSubmissionModel.DataClass.Identifier.Session(
-                        id: "56797172855234403526020",
-                        action: "new"
+                        id: sessionID,
+                        action: Config.Action.new.rawValue
                     )
                 ),
                 variables: DataSubmissionModel.DataClass.Variables(
                     documentLocationHref: "https://ckion-dev.jtm-demo.com/?",
                     fbBrowserId: "fb.1.1711009849625.5246926883",
-                    jtspushedcommands: ["pageview", "submit"],
+                    jtspushedcommands: [Config.Tracking.Track.pageview.rawValue, Config.Tracking.Track.submit.rawValue],
                     productId: ["1111", "2222222"]
                 ),
                 enrichment: DataSubmissionModel.DataClass.Enrichment(
