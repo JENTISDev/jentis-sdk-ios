@@ -10,7 +10,12 @@ import Security
 
 class UserIDUtility {
 
-    private let userIDKey = "com.yourapp.userID"
+    private let userIDKey: String
+    
+    // Initializer to accept the key as a parameter
+    init(userIDKey: String) {
+        self.userIDKey = userIDKey
+    }
     
     // Function to generate UUID similar to the uuidv4 function
     private func generateUUID() -> String {
@@ -30,8 +35,10 @@ class UserIDUtility {
         // Add the new User ID to the Keychain
         let status = SecItemAdd(query as CFDictionary, nil)
         
-        if status != errSecSuccess {
-            print("Error saving User ID to Keychain: \(status)")
+        if status == errSecSuccess {
+            LoggerUtility.shared.logInfo("User ID successfully stored in Keychain with key: \(userIDKey).")
+        } else {
+            LoggerUtility.shared.logError("Error saving User ID to Keychain with key \(userIDKey): \(status)")
         }
     }
     
@@ -48,7 +55,10 @@ class UserIDUtility {
         let status = SecItemCopyMatching(query as CFDictionary, &item)
         
         if status == errSecSuccess, let data = item as? Data, let userID = String(data: data, encoding: .utf8) {
+            LoggerUtility.shared.logInfo("User ID successfully retrieved from Keychain with key: \(userIDKey).")
             return userID
+        } else {
+            LoggerUtility.shared.logWarning("No User ID found in Keychain with key \(userIDKey) or error retrieving it: \(status)")
         }
         
         return nil
@@ -58,11 +68,13 @@ class UserIDUtility {
     func getUserID() -> String {
         // Try to retrieve the User ID from Keychain
         if let storedUserID = retrieveUserIDFromKeychain() {
+            LoggerUtility.shared.logDebug("User ID retrieved with key \(userIDKey): \(storedUserID)")
             return storedUserID
         }
         
         // If User ID does not exist, generate a new one
         let newUserID = generateUUID()
+        LoggerUtility.shared.logInfo("Generated new User ID: \(newUserID)")
         
         // Store the new User ID in Keychain
         storeUserIDInKeychain(newUserID)
@@ -74,7 +86,6 @@ class UserIDUtility {
     func setUserID() {
         let userID = getUserID()
         // Additional logic for handling user identification can be added here
-        print("User ID: \(userID)") // Example usage
+        LoggerUtility.shared.logInfo("User ID set with ID: \(userID) and key: \(userIDKey)")
     }
 }
-

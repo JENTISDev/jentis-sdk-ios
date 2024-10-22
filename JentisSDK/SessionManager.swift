@@ -17,6 +17,7 @@ public class SessionManager {
 
     // MARK: - Setup for observing app lifecycle events
     public static func startObservingAppLifecycle() {
+        LoggerUtility.shared.logInfo("Started observing app lifecycle events")
         NotificationCenter.default.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appWillEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(appWillTerminate), name: UIApplication.willTerminateNotification, object: nil)
@@ -25,24 +26,24 @@ public class SessionManager {
     // MARK: - Handle App Lifecycle Events
 
     @objc private static func appDidEnterBackground() {
-        print("App entered background")
+        LoggerUtility.shared.logInfo("App entered background")
         // Save the last active timestamp when the app goes to the background
         lastActiveTimestamp = Date().timeIntervalSince1970
     }
 
     @objc private static func appWillEnterForeground() {
-        print("App will enter foreground")
+        LoggerUtility.shared.logInfo("App will enter foreground")
         // Check if the session should be resumed or a new session started
         let currentTime = Date().timeIntervalSince1970
         if (currentTime - lastActiveTimestamp) > sessionTimeoutInSeconds {
             startNewSession()
         } else {
-            print("Resuming existing session with ID: \(currentSessionID ?? "unknown")")
+            LoggerUtility.shared.logDebug("Resuming existing session with ID: \(currentSessionID ?? "unknown")")
         }
     }
 
     @objc private static func appWillTerminate() {
-        print("App will terminate")
+        LoggerUtility.shared.logInfo("App will terminate")
         // End the current session if the app is being closed
         endSession()
     }
@@ -57,7 +58,7 @@ public class SessionManager {
         if (currentTime - lastActiveTimestamp) > sessionTimeoutInSeconds || currentSessionID == nil {
             startNewSession()
         } else {
-            print("Session resumed with ID: \(currentSessionID!)")
+            LoggerUtility.shared.logDebug("Session resumed with ID: \(currentSessionID!)")
         }
 
         // Update the last active timestamp
@@ -69,7 +70,7 @@ public class SessionManager {
     /// Starts a new session by generating a new session ID
     private static func startNewSession() {
         currentSessionID = generateSessionID()
-        print("New session started with ID: \(currentSessionID!)")
+        LoggerUtility.shared.logInfo("New session started with ID: \(currentSessionID!)")
         lastActiveTimestamp = Date().timeIntervalSince1970
     }
 
@@ -80,12 +81,13 @@ public class SessionManager {
     
     /// Manually end the current session (optional)
     public static func endSession() {
-        print("Session ended with ID: \(currentSessionID ?? "unknown")")
+        LoggerUtility.shared.logInfo("Session ended with ID: \(currentSessionID ?? "unknown")")
         currentSessionID = nil
     }
     
     /// Updates the last activity timestamp to prevent session timeout
     public static func updateLastActiveTimestamp() {
         lastActiveTimestamp = Date().timeIntervalSince1970
+        LoggerUtility.shared.logDebug("Last active timestamp updated")
     }
 }

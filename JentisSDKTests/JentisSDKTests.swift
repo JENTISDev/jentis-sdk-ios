@@ -18,7 +18,14 @@ class JentisSDKTests: XCTestCase {
         try super.setUpWithError()
 
         // Initialize TrackConfig
-        let config = TrackConfig(trackDomain: "testDomain", trackID: "testID", environment: .live)
+        let config = TrackConfig(
+            trackDomain: "qc3ipx.ckion-dev.jtm-demo.com/",
+            container: "app-mobiweb",
+            environment: .stage,
+            version: "3",
+            debugCode: "a675b5f1-48d2-43bf-b314-ba4830cda52d"
+        )
+
 
         // Configure the JentisSDK (which initializes TrackingService)
         JentisService.configure(with: config)

@@ -9,16 +9,17 @@ import Foundation
 
 final class Service {
 
-    private let urlString: String
     private let session: URLSession
     
-    public init(urlString: String = "https://qc3ipx.ckion-dev.jtm-demo.com/", session: URLSession = .shared) {
-        self.urlString = urlString
+    public init(session: URLSession = .shared) {
         self.session = session
     }
 
     // Method to send a string
     public func sendString(_ myString: String) async throws {
+        let trackConfig = TrackConfig.shared
+        let urlString = "https://\(trackConfig.trackDomain)/"
+        
         guard let url = URL(string: urlString) else {
             throw ServiceError.invalidURL
         }
@@ -56,6 +57,9 @@ final class Service {
     
     // Private generic method to send any Codable object
     private func sendObject<T: Codable>(_ object: T) async throws {
+        let trackConfig = TrackConfig.shared  // Direct access to TrackConfig.shared
+        let urlString = "https://\(trackConfig.trackDomain)/"  // Dynamic track domain
+        
         guard let url = URL(string: urlString) else {
             throw ServiceError.invalidURL
         }
@@ -87,4 +91,3 @@ final class Service {
         case invalidResponse
     }
 }
-

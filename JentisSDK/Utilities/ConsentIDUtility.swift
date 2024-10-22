@@ -10,8 +10,13 @@ import Security
 
 class ConsentIDUtility {
 
-    private let consentIDKey = "com.yourapp.consentID"
+    private let consentIDKey: String  // Key is now passed via initialization
     
+    // Initializer to accept the key as a parameter
+    init(consentIDKey: String) {
+        self.consentIDKey = consentIDKey
+    }
+
     // Function to generate UUID similar to the uuidv4 function
     private func generateUUID() -> String {
         return UUID().uuidString.lowercased()
@@ -30,8 +35,10 @@ class ConsentIDUtility {
         // Add the new Consent ID to the Keychain
         let status = SecItemAdd(query as CFDictionary, nil)
         
-        if status != errSecSuccess {
-            print("Error saving Consent ID to Keychain: \(status)")
+        if status == errSecSuccess {
+            LoggerUtility.shared.logInfo("Consent ID successfully stored in Keychain with key: \(consentIDKey).")
+        } else {
+            LoggerUtility.shared.logError("Error saving Consent ID to Keychain with key \(consentIDKey): \(status)")
         }
     }
     
@@ -48,7 +55,10 @@ class ConsentIDUtility {
         let status = SecItemCopyMatching(query as CFDictionary, &item)
         
         if status == errSecSuccess, let data = item as? Data, let consentID = String(data: data, encoding: .utf8) {
+            LoggerUtility.shared.logInfo("Consent ID successfully retrieved from Keychain with key: \(consentIDKey).")
             return consentID
+        } else {
+            LoggerUtility.shared.logWarning("No Consent ID found in Keychain with key \(consentIDKey) or error retrieving it: \(status)")
         }
         
         return nil
@@ -58,11 +68,13 @@ class ConsentIDUtility {
     func getConsentID() -> String {
         // Try to retrieve the Consent ID from Keychain
         if let storedConsentID = retrieveConsentIDFromKeychain() {
+            LoggerUtility.shared.logDebug("Consent ID retrieved with key \(consentIDKey): \(storedConsentID)")
             return storedConsentID
         }
         
         // If Consent ID does not exist, generate a new one
         let newConsentID = generateUUID()
+        LoggerUtility.shared.logInfo("Generated new Consent ID: \(newConsentID)")
         
         // Store the new Consent ID in Keychain
         storeConsentIDInKeychain(newConsentID)
@@ -74,6 +86,6 @@ class ConsentIDUtility {
     func setConsent() {
         let consentID = getConsentID()
         // Additional logic for handling consent can be added here
-        print("Consent ID: \(consentID)") // Example usage
+        LoggerUtility.shared.logInfo("Consent set with ID: \(consentID) and key: \(consentIDKey)")
     }
 }

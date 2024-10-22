@@ -9,7 +9,16 @@ import Foundation
 
 public class JentisService {
     public static func configure(with config: TrackConfig) {
-        TrackingService.initialize(with: config)
+        LoggerUtility.shared.logInfo("JentisService is configuring with trackDomain: \(config.trackDomain), container: \(config.container), environment: \(config.environment.rawValue)")
+
+        TrackConfig.configure(
+            trackDomain: config.trackDomain,
+            container: config.container,
+            environment: config.environment,
+            version: config.version,
+            debugCode: config.debugCode
+        )
+        TrackingService.initialize()
         SessionManager.startObservingAppLifecycle()
     }
 }
@@ -17,32 +26,43 @@ public class JentisService {
 public class TrackingService {
     private static var instance: TrackingService?
     
-    public static func initialize(with config: TrackConfig) {
+    public static func initialize() {
         guard instance == nil else {
-            print("TrackingService is already initialized")
+            LoggerUtility.shared.logWarning("TrackingService is already initialized")
             return
         }
-        instance = TrackingService(config: config)
+
+        // Pass the container from TrackConfig as the key for UserIDUtility
+        let trackConfig = TrackConfig.shared
+        let userIDUtility = UserIDUtility(userIDKey: trackConfig.container)
+        let consentIDUtility = ConsentIDUtility(consentIDKey: trackConfig.container)
+
+        instance = TrackingService(userIDUtility: userIDUtility, consentIDUtility: consentIDUtility)
+        LoggerUtility.shared.logInfo("TrackingService initialized successfully with container: \(trackConfig.container)")
     }
     
     public static var shared: TrackingService {
         guard let instance = instance else {
+            LoggerUtility.shared.logError("TrackingService is not initialized. Call JentisService.configure(with:) first.")
             fatalError("TrackingService is not initialized. Call JentisService.configure(with:) first.")
         }
         return instance
     }
     
-    private let trackConfig: TrackConfig
+    private let trackConfig = TrackConfig.shared
     private let service = Service()
     private let userAgent = UserAgentUtility.userAgent
-    private let consentUtility = ConsentIDUtility()
-    private let userIDUtility = UserIDUtility()
-    
-    private init(config: TrackConfig) {
-        self.trackConfig = config
+    private let consentUtility: ConsentIDUtility
+    private let userIDUtility: UserIDUtility
+
+    private init(userIDUtility: UserIDUtility, consentIDUtility: ConsentIDUtility) {
+        self.userIDUtility = userIDUtility
+        self.consentUtility = consentIDUtility
     }
-    
+
     public func sendConsentModel() async throws {
+        LoggerUtility.shared.logInfo("Preparing to send consent model")
+        
         let consentID = consentUtility.getConsentID()
         let userID = userIDUtility.getUserID()
         let sessionID = SessionManager.startOrResumeSession()
@@ -56,10 +76,10 @@ public class TrackingService {
                 sessionID: sessionID
             ),
             configuration: ConsentModel.Configuration(
-                container: trackConfig.trackDomain,
+                container: trackConfig.container,
                 environment: trackConfig.environment.rawValue,
-                version: "3",
-                debugcode: "a675b5f1-48d2-43bf-b314-ba4830cda52d"
+                version: trackConfig.version ?? "",
+                debugcode: trackConfig.debugCode ?? ""
             ),
             data: ConsentModel.DataClass(
                 identifier: ConsentModel.DataClass.Identifier(
@@ -86,11 +106,16 @@ public class TrackingService {
                 )
             )
         )
-        
+
+        LoggerUtility.shared.logDebug("Sending consent model: \(consentModel)")
         try await service.sendConsent(consentModel)
+        LoggerUtility.shared.logInfo("Consent model sent successfully")
     }
-    
+
+    // Send Data Submission Model with Logging
     public func sendDataSubmissionModel() async throws {
+        LoggerUtility.shared.logInfo("Preparing to send data submission model")
+
         let userID = userIDUtility.getUserID()
         let sessionID = SessionManager.startOrResumeSession()
         
@@ -108,10 +133,10 @@ public class TrackingService {
                 awin: DataSubmissionModel.Consent.Vendor(status: .bool(false))
             ),
             configuration: DataSubmissionModel.Configuration(
-                container: trackConfig.trackDomain,
+                container: trackConfig.container,
                 environment: trackConfig.environment.rawValue,
-                version: "3",
-                debugcode: "a675b5f1-48d2-43bf-b314-ba4830cda52d"
+                version: trackConfig.version ?? "",
+                debugcode: trackConfig.debugCode ?? ""
             ),
             data: DataSubmissionModel.DataClass(
                 identifier: DataSubmissionModel.DataClass.Identifier(
@@ -142,6 +167,9 @@ public class TrackingService {
                 )
             )
         )
+        
+        LoggerUtility.shared.logDebug("Sending data submission model: \(dataSubmissionModel)")
         try await service.sendDataSubmission(dataSubmissionModel)
+        LoggerUtility.shared.logInfo("Data submission model sent successfully")
     }
 }
