@@ -26,7 +26,6 @@ class JentisSDKTests: XCTestCase {
             debugCode: "a675b5f1-48d2-43bf-b314-ba4830cda52d"
         )
 
-
         // Configure the JentisSDK (which initializes TrackingService)
         JentisService.configure(with: config)
 

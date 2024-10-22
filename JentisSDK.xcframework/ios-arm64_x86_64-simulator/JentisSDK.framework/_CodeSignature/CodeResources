@@ -10,47 +10,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		4QRwGE2yO5tdB+an+cres8/CfAE=
+		X/U78N8ResFJwYsGtWnej+KdFBw=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		h4wQzYcZ8T6dojcD8jcJoFsSh64=
+		K7L0ghOkx8YPksJhlZKRthh3NoI=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		/9epMHn/n3EPsN8wVHP40DtOix4=
+		TFlDd9d3Safg16OoWyZDdxtAof0=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		hvf15kf8LNqqpjN1tvtDz6+DORY=
+		Xwfjtz/yGsxiQ9mQj5hfj2oD3I8=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		/9epMHn/n3EPsN8wVHP40DtOix4=
+		TFlDd9d3Safg16OoWyZDdxtAof0=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		wScpClkmRMpgfikKcxjerty3shA=
+		ruVrI/yKTFoNt1weMGmiCBzX4nI=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		h4wQzYcZ8T6dojcD8jcJoFsSh64=
+		K7L0ghOkx8YPksJhlZKRthh3NoI=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		PAmautCpU9uyUWcsSfd53JjsPU0=
+		CSeaBoJ5QsTZuHIDbqIAXVoWH+U=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		NJtNfthyjZNwYqzoXuOdMBEkUiA=
+		M/3MIyuullVXLCwJ9856xD+z7lg=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		PAmautCpU9uyUWcsSfd53JjsPU0=
+		CSeaBoJ5QsTZuHIDbqIAXVoWH+U=
 		</data>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		xtc8BKZetBXNwM5h05nYv95nqjg=
+		/9iRcVWE35y06XAmmew/1nhu90U=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,70 +70,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			8K0A2EIMeyvLLJkxb3dhbQ0plq/dax8al4JP1siT8Wk=
+			PWxKkzAPB3VghKvSeFX1ujrc7QpltEtjXRddz/96G/E=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o/tLwam2Ov7TK6dBosDo0MmrcN7kkD/zr88rKf0OKJ8=
+			d+dDAl5LX5UBgpcdUw3s6IT4jlM/7IhSjIwGdzMKweQ=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q6DM0zGC/Ls3ZHlEqTGRVY6AL6LkqW0rf9V7nD9+kok=
+			w/6wmhaPV7uRyC9W75xd5qUit1OjjeWYPsUCTFJm/gs=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			o/tLwam2Ov7TK6dBosDo0MmrcN7kkD/zr88rKf0OKJ8=
+			d+dDAl5LX5UBgpcdUw3s6IT4jlM/7IhSjIwGdzMKweQ=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			B9yzK/cgh/BHq8TdFtJZ8qCjG04upBOpX2+UGodlxd0=
+			fDlTANrUklx2n0iaqJQdRVx98UnNLz0GRSoLcG/JmkA=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8K0A2EIMeyvLLJkxb3dhbQ0plq/dax8al4JP1siT8Wk=
+			PWxKkzAPB3VghKvSeFX1ujrc7QpltEtjXRddz/96G/E=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kojWV4bJm2Ror6LBk0FeiTJA1+n+0TqNc0BbALgszOs=
+			X6bRZ7rgl4wzrDbpcPJS8SUVLeeIILQTzR0OCsiF4z4=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iALqOBB08nkz4Rg2/4w+i23ScmoEo0FlBgZ2eSrahc8=
+			5DKeHWin92XdWvQkvyvIUJ4wv1HchlsaXq1gXr4j7N4=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kojWV4bJm2Ror6LBk0FeiTJA1+n+0TqNc0BbALgszOs=
+			X6bRZ7rgl4wzrDbpcPJS8SUVLeeIILQTzR0OCsiF4z4=
 			</data>
 		</dict>
 		<key>Modules/JentisSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BtMDJMKlMPqxmsFig9t+jvWAmA2Mazr2ZNoTebh+Cfc=
+			Dr28UhdpBmeL3v0RSai2wCoMBgi1aH+3JFLKss48j/g=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

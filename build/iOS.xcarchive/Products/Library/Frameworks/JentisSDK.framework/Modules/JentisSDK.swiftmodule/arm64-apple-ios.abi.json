@@ -1,8 +1,8 @@
 {
   "ABIRoot": {
     "kind": "Root",
-    "name": "TopLevel",
-    "printedName": "TopLevel",
+    "name": "JentisSDK",
+    "printedName": "JentisSDK",
     "children": [
       {
         "kind": "Import",
@@ -15,14 +15,837 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "JentisSDK"
+      },
+      {
         "kind": "TypeDecl",
-        "name": "TrackingService",
-        "printedName": "TrackingService",
+        "name": "SessionManager",
+        "printedName": "SessionManager",
         "children": [
           {
             "kind": "Function",
-            "name": "saveString",
-            "printedName": "saveString(_:)",
+            "name": "startObservingAppLifecycle",
+            "printedName": "startObservingAppLifecycle()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK14SessionManagerC26startObservingAppLifecycleyyFZ",
+            "mangledName": "$s9JentisSDK14SessionManagerC26startObservingAppLifecycleyyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "startOrResumeSession",
+            "printedName": "startOrResumeSession()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK14SessionManagerC013startOrResumeC0SSyFZ",
+            "mangledName": "$s9JentisSDK14SessionManagerC013startOrResumeC0SSyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "endSession",
+            "printedName": "endSession()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK14SessionManagerC03endC0yyFZ",
+            "mangledName": "$s9JentisSDK14SessionManagerC03endC0yyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "updateLastActiveTimestamp",
+            "printedName": "updateLastActiveTimestamp()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK14SessionManagerC25updateLastActiveTimestampyyFZ",
+            "mangledName": "$s9JentisSDK14SessionManagerC25updateLastActiveTimestampyyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:9JentisSDK14SessionManagerC",
+        "mangledName": "$s9JentisSDK14SessionManagerC",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TrackConfig",
+        "printedName": "TrackConfig",
+        "children": [
+          {
+            "kind": "TypeDecl",
+            "name": "Environment",
+            "printedName": "Environment",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "live",
+                "printedName": "live",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(JentisSDK.TrackConfig.Environment.Type) -> JentisSDK.TrackConfig.Environment",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Environment",
+                        "printedName": "JentisSDK.TrackConfig.Environment",
+                        "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "JentisSDK.TrackConfig.Environment.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Environment",
+                            "printedName": "JentisSDK.TrackConfig.Environment",
+                            "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO4liveyA2EmF",
+                "mangledName": "$s9JentisSDK11TrackConfigC11EnvironmentO4liveyA2EmF",
+                "moduleName": "JentisSDK"
+              },
+              {
+                "kind": "Var",
+                "name": "stage",
+                "printedName": "stage",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(JentisSDK.TrackConfig.Environment.Type) -> JentisSDK.TrackConfig.Environment",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Environment",
+                        "printedName": "JentisSDK.TrackConfig.Environment",
+                        "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metatype",
+                        "printedName": "JentisSDK.TrackConfig.Environment.Type",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Environment",
+                            "printedName": "JentisSDK.TrackConfig.Environment",
+                            "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "declKind": "EnumElement",
+                "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO5stageyA2EmF",
+                "mangledName": "$s9JentisSDK11TrackConfigC11EnvironmentO5stageyA2EmF",
+                "moduleName": "JentisSDK"
+              },
+              {
+                "kind": "Constructor",
+                "name": "init",
+                "printedName": "init(rawValue:)",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "JentisSDK.TrackConfig.Environment?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Environment",
+                        "printedName": "JentisSDK.TrackConfig.Environment",
+                        "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Constructor",
+                "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO8rawValueAESgSS_tcfc",
+                "mangledName": "$s9JentisSDK11TrackConfigC11EnvironmentO8rawValueAESgSS_tcfc",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "init_kind": "Designated"
+              },
+              {
+                "kind": "Var",
+                "name": "rawValue",
+                "printedName": "rawValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO8rawValueSSvp",
+                "mangledName": "$s9JentisSDK11TrackConfigC11EnvironmentO8rawValueSSvp",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO8rawValueSSvg",
+                    "mangledName": "$s9JentisSDK11TrackConfigC11EnvironmentO8rawValueSSvg",
+                    "moduleName": "JentisSDK",
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "allCases",
+                "printedName": "allCases",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[JentisSDK.TrackConfig.Environment]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Environment",
+                        "printedName": "JentisSDK.TrackConfig.Environment",
+                        "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO8allCasesSayAEGvpZ",
+                "mangledName": "$s9JentisSDK11TrackConfigC11EnvironmentO8allCasesSayAEGvpZ",
+                "moduleName": "JentisSDK",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Nonisolated"
+                ],
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[JentisSDK.TrackConfig.Environment]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Environment",
+                            "printedName": "JentisSDK.TrackConfig.Environment",
+                            "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO8allCasesSayAEGvgZ",
+                    "mangledName": "$s9JentisSDK11TrackConfigC11EnvironmentO8allCasesSayAEGvgZ",
+                    "moduleName": "JentisSDK",
+                    "static": true,
+                    "implicit": true,
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Enum",
+            "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO",
+            "mangledName": "$s9JentisSDK11TrackConfigC11EnvironmentO",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "enumRawTypeName": "String",
+            "conformances": [
+              {
+                "kind": "Conformance",
+                "name": "Copyable",
+                "printedName": "Copyable",
+                "usr": "s:s8CopyableP",
+                "mangledName": "$ss8CopyableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Escapable",
+                "printedName": "Escapable",
+                "usr": "s:s9EscapableP",
+                "mangledName": "$ss9EscapableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Equatable",
+                "printedName": "Equatable",
+                "usr": "s:SQ",
+                "mangledName": "$sSQ"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Hashable",
+                "printedName": "Hashable",
+                "usr": "s:SH",
+                "mangledName": "$sSH"
+              },
+              {
+                "kind": "Conformance",
+                "name": "RawRepresentable",
+                "printedName": "RawRepresentable",
+                "children": [
+                  {
+                    "kind": "TypeWitness",
+                    "name": "RawValue",
+                    "printedName": "RawValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:SY",
+                "mangledName": "$sSY"
+              },
+              {
+                "kind": "Conformance",
+                "name": "CaseIterable",
+                "printedName": "CaseIterable",
+                "children": [
+                  {
+                    "kind": "TypeWitness",
+                    "name": "AllCases",
+                    "printedName": "AllCases",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[JentisSDK.TrackConfig.Environment]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Environment",
+                            "printedName": "JentisSDK.TrackConfig.Environment",
+                            "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ]
+                  }
+                ],
+                "usr": "s:s12CaseIterableP",
+                "mangledName": "$ss12CaseIterableP"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Decodable",
+                "printedName": "Decodable",
+                "usr": "s:Se",
+                "mangledName": "$sSe"
+              },
+              {
+                "kind": "Conformance",
+                "name": "Encodable",
+                "printedName": "Encodable",
+                "usr": "s:SE",
+                "mangledName": "$sSE"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "trackDomain",
+            "printedName": "trackDomain",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK11TrackConfigC11trackDomainSSvp",
+            "mangledName": "$s9JentisSDK11TrackConfigC11trackDomainSSvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK11TrackConfigC11trackDomainSSvg",
+                "mangledName": "$s9JentisSDK11TrackConfigC11trackDomainSSvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "container",
+            "printedName": "container",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK11TrackConfigC9containerSSvp",
+            "mangledName": "$s9JentisSDK11TrackConfigC9containerSSvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK11TrackConfigC9containerSSvg",
+                "mangledName": "$s9JentisSDK11TrackConfigC9containerSSvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "environment",
+            "printedName": "environment",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Environment",
+                "printedName": "JentisSDK.TrackConfig.Environment",
+                "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK11TrackConfigC11environmentAC11EnvironmentOvp",
+            "mangledName": "$s9JentisSDK11TrackConfigC11environmentAC11EnvironmentOvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Environment",
+                    "printedName": "JentisSDK.TrackConfig.Environment",
+                    "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK11TrackConfigC11environmentAC11EnvironmentOvg",
+                "mangledName": "$s9JentisSDK11TrackConfigC11environmentAC11EnvironmentOvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "version",
+            "printedName": "version",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK11TrackConfigC7versionSSSgvp",
+            "mangledName": "$s9JentisSDK11TrackConfigC7versionSSSgvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK11TrackConfigC7versionSSSgvg",
+                "mangledName": "$s9JentisSDK11TrackConfigC7versionSSSgvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "debugCode",
+            "printedName": "debugCode",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK11TrackConfigC9debugCodeSSSgvp",
+            "mangledName": "$s9JentisSDK11TrackConfigC9debugCodeSSSgvp",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK11TrackConfigC9debugCodeSSSgvg",
+                "mangledName": "$s9JentisSDK11TrackConfigC9debugCodeSSSgvg",
+                "moduleName": "JentisSDK",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(trackDomain:container:environment:version:debugCode:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TrackConfig",
+                "printedName": "JentisSDK.TrackConfig",
+                "usr": "s:9JentisSDK11TrackConfigC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Environment",
+                "printedName": "JentisSDK.TrackConfig.Environment",
+                "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9JentisSDK11TrackConfigC11trackDomain9container11environment7version9debugCodeACSS_SSAC11EnvironmentOSSSgAKtcfc",
+            "mangledName": "$s9JentisSDK11TrackConfigC11trackDomain9container11environment7version9debugCodeACSS_SSAC11EnvironmentOSSSgAKtcfc",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "configure",
+            "printedName": "configure(trackDomain:container:environment:version:debugCode:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -34,15 +857,454 @@
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Environment",
+                "printedName": "JentisSDK.TrackConfig.Environment",
+                "usr": "s:9JentisSDK11TrackConfigC11EnvironmentO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sq"
               }
             ],
             "declKind": "Func",
-            "usr": "s:9JentisSDK15TrackingServiceC10saveStringyySSYaKFZ",
-            "mangledName": "$s9JentisSDK15TrackingServiceC10saveStringyySSYaKFZ",
+            "usr": "s:9JentisSDK11TrackConfigC9configure11trackDomain9container11environment7version9debugCodeySS_SSAC11EnvironmentOSSSgALtFZ",
+            "mangledName": "$s9JentisSDK11TrackConfigC9configure11trackDomain9container11environment7version9debugCodeySS_SSAC11EnvironmentOSSSgALtFZ",
             "moduleName": "JentisSDK",
             "static": true,
             "declAttributes": [
               "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TrackConfig",
+                "printedName": "JentisSDK.TrackConfig",
+                "usr": "s:9JentisSDK11TrackConfigC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK11TrackConfigC6sharedACvpZ",
+            "mangledName": "$s9JentisSDK11TrackConfigC6sharedACvpZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TrackConfig",
+                    "printedName": "JentisSDK.TrackConfig",
+                    "usr": "s:9JentisSDK11TrackConfigC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK11TrackConfigC6sharedACvgZ",
+                "mangledName": "$s9JentisSDK11TrackConfigC6sharedACvgZ",
+                "moduleName": "JentisSDK",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "loadConfigFromUserDefaults",
+            "printedName": "loadConfigFromUserDefaults()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK11TrackConfigC04loadD16FromUserDefaultsyyFZ",
+            "mangledName": "$s9JentisSDK11TrackConfigC04loadD16FromUserDefaultsyyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "clearConfigFromUserDefaults",
+            "printedName": "clearConfigFromUserDefaults()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK11TrackConfigC05clearD16FromUserDefaultsyyFZ",
+            "mangledName": "$s9JentisSDK11TrackConfigC05clearD16FromUserDefaultsyyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TrackConfig",
+                "printedName": "JentisSDK.TrackConfig",
+                "usr": "s:9JentisSDK11TrackConfigC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:9JentisSDK11TrackConfigC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s9JentisSDK11TrackConfigC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "JentisSDK",
+            "implicit": true,
+            "declAttributes": [
+              "Required"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK11TrackConfigC6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s9JentisSDK11TrackConfigC6encode2toys7Encoder_p_tKF",
+            "moduleName": "JentisSDK",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:9JentisSDK11TrackConfigC",
+        "mangledName": "$s9JentisSDK11TrackConfigC",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "JentisSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "JentisService",
+        "printedName": "JentisService",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "configure",
+            "printedName": "configure(with:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TrackConfig",
+                "printedName": "JentisSDK.TrackConfig",
+                "usr": "s:9JentisSDK11TrackConfigC"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK0A7ServiceC9configure4withyAA11TrackConfigC_tFZ",
+            "mangledName": "$s9JentisSDK0A7ServiceC9configure4withyAA11TrackConfigC_tFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:9JentisSDK0A7ServiceC",
+        "mangledName": "$s9JentisSDK0A7ServiceC",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TrackingService",
+        "printedName": "TrackingService",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "initialize",
+            "printedName": "initialize()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK15TrackingServiceC10initializeyyFZ",
+            "mangledName": "$s9JentisSDK15TrackingServiceC10initializeyyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TrackingService",
+                "printedName": "JentisSDK.TrackingService",
+                "usr": "s:9JentisSDK15TrackingServiceC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:9JentisSDK15TrackingServiceC6sharedACvpZ",
+            "mangledName": "$s9JentisSDK15TrackingServiceC6sharedACvpZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TrackingService",
+                    "printedName": "JentisSDK.TrackingService",
+                    "usr": "s:9JentisSDK15TrackingServiceC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:9JentisSDK15TrackingServiceC6sharedACvgZ",
+                "mangledName": "$s9JentisSDK15TrackingServiceC6sharedACvgZ",
+                "moduleName": "JentisSDK",
+                "static": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "sendConsentModel",
+            "printedName": "sendConsentModel()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK15TrackingServiceC16sendConsentModelyyYaKF",
+            "mangledName": "$s9JentisSDK15TrackingServiceC16sendConsentModelyyYaKF",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "sendDataSubmissionModel",
+            "printedName": "sendDataSubmissionModel()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK15TrackingServiceC23sendDataSubmissionModelyyYaKF",
+            "mangledName": "$s9JentisSDK15TrackingServiceC23sendDataSubmissionModelyyYaKF",
+            "moduleName": "JentisSDK",
+            "declAttributes": [
               "AccessControl",
               "RawDocComment"
             ],
@@ -57,7 +1319,149 @@
         "declAttributes": [
           "AccessControl"
         ],
-        "hasMissingDesignatedInitializers": true
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "UIKit",
+        "printedName": "UIKit",
+        "declKind": "Import",
+        "moduleName": "JentisSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "TimestampUtility",
+        "printedName": "TimestampUtility",
+        "children": [
+          {
+            "kind": "Function",
+            "name": "currentTimestampInMillis",
+            "printedName": "currentTimestampInMillis()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:9JentisSDK16TimestampUtilityC07currentC8InMillisSiyFZ",
+            "mangledName": "$s9JentisSDK16TimestampUtilityC07currentC8InMillisSiyFZ",
+            "moduleName": "JentisSDK",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:9JentisSDK16TimestampUtilityC",
+        "mangledName": "$s9JentisSDK16TimestampUtilityC",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Security",
+        "printedName": "Security",
+        "declKind": "Import",
+        "moduleName": "JentisSDK"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "JentisSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "os",
+        "printedName": "os",
+        "declKind": "Import",
+        "moduleName": "JentisSDK"
       },
       {
         "kind": "Import",
@@ -74,11 +1478,179 @@
   },
   "ConstValues": [
     {
-      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/Service.swift",
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
       "kind": "StringLiteral",
-      "offset": 235,
-      "length": 68,
-      "value": "\"https:\/\/us-central1-mobilesdklogging.cloudfunctions.net\/saveString\""
+      "offset": 628,
+      "length": 21,
+      "value": "\"navigator-userAgent\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 953,
+      "length": 17,
+      "value": "\"googleanalytics\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 3413,
+      "length": 24,
+      "value": "\"document_location_href\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 3473,
+      "length": 15,
+      "value": "\"fb_browser_id\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 3561,
+      "length": 12,
+      "value": "\"product_id\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/DataSubmissionModel.swift",
+      "kind": "StringLiteral",
+      "offset": 3837,
+      "length": 25,
+      "value": "\"enrichment_xxxlprodfeed\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/ConsentModel.swift",
+      "kind": "StringLiteral",
+      "offset": 554,
+      "length": 21,
+      "value": "\"navigator-userAgent\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Model\/ConsentModel.swift",
+      "kind": "StringLiteral",
+      "offset": 1937,
+      "length": 17,
+      "value": "\"googleanalytics\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/SessionManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 311,
+      "length": 2,
+      "value": "60"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/TrackConfig.swift",
+      "kind": "StringLiteral",
+      "offset": 812,
+      "length": 24,
+      "value": "\"com.jentis.TrackConfig\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 152,
+      "length": 17,
+      "value": "\"at.allaboutapps\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 224,
+      "length": 5,
+      "value": "\"iOS\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 264,
+      "length": 7,
+      "value": "\"Apple\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "IntegerLiteral",
+      "offset": 333,
+      "length": 2,
+      "value": "23"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 366,
+      "length": 17,
+      "value": "\"jts_push_submit\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "IntegerLiteral",
+      "offset": 421,
+      "length": 2,
+      "value": "30"
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 454,
+      "length": 7,
+      "value": "\"track\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 491,
+      "length": 6,
+      "value": "\"data\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 535,
+      "length": 14,
+      "value": "\"documentType\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 585,
+      "length": 10,
+      "value": "\"property\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 628,
+      "length": 9,
+      "value": "\"product\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 677,
+      "length": 9,
+      "value": "\"sdk-ios\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Config.swift",
+      "kind": "StringLiteral",
+      "offset": 729,
+      "length": 10,
+      "value": "\"https:\/\/\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/LoggerUtility.swift",
+      "kind": "StringLiteral",
+      "offset": 372,
+      "length": 22,
+      "value": "\"com.jentis.JentisSDK\""
+    },
+    {
+      "filePath": "\/Users\/alexandreoliveira\/Developer\/jentis-sdk-ios\/JentisSDK\/Utilities\/LoggerUtility.swift",
+      "kind": "StringLiteral",
+      "offset": 406,
+      "length": 9,
+      "value": "\"default\""
     }
   ]
 }

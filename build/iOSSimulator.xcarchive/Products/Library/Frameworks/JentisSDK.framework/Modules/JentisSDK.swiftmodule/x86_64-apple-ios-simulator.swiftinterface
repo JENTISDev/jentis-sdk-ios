@@ -1,15 +1,68 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0 effective-5.10 (swiftlang-6.0.0.9.10 clang-1600.0.26.2)
 // swift-module-flags: -target x86_64-apple-ios15.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name JentisSDK
 import Foundation
 @_exported import JentisSDK
+import Security
 import Swift
+import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_hasMissingDesignatedInitializers public class TrackingService {
-  #if compiler(>=5.3) && $AsyncAwait
-  public static func saveString(_ string: Swift.String) async throws
-  #endif
+import os
+@_hasMissingDesignatedInitializers public class SessionManager {
+  public static func startObservingAppLifecycle()
+  public static func startOrResumeSession() -> Swift.String
+  public static func endSession()
+  public static func updateLastActiveTimestamp()
   @objc deinit
 }
+public class TrackConfig : Swift.Codable {
+  public enum Environment : Swift.String, Swift.CaseIterable, Swift.Codable {
+    case live, stage
+    public init?(rawValue: Swift.String)
+    public typealias AllCases = [JentisSDK.TrackConfig.Environment]
+    public typealias RawValue = Swift.String
+    nonisolated public static var allCases: [JentisSDK.TrackConfig.Environment] {
+      get
+    }
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  final public let trackDomain: Swift.String
+  final public let container: Swift.String
+  final public let environment: JentisSDK.TrackConfig.Environment
+  final public let version: Swift.String?
+  final public let debugCode: Swift.String?
+  public init(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String?, debugCode: Swift.String?)
+  public static func configure(trackDomain: Swift.String, container: Swift.String, environment: JentisSDK.TrackConfig.Environment, version: Swift.String? = nil, debugCode: Swift.String? = nil)
+  public static var shared: JentisSDK.TrackConfig {
+    get
+  }
+  public static func loadConfigFromUserDefaults()
+  public static func clearConfigFromUserDefaults()
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class JentisService {
+  public static func configure(with config: JentisSDK.TrackConfig)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TrackingService {
+  public static func initialize()
+  public static var shared: JentisSDK.TrackingService {
+    get
+  }
+  public func sendConsentModel() async throws
+  public func sendDataSubmissionModel() async throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TimestampUtility {
+  public static func currentTimestampInMillis() -> Swift.Int
+  @objc deinit
+}
+extension JentisSDK.TrackConfig.Environment : Swift.Equatable {}
+extension JentisSDK.TrackConfig.Environment : Swift.Hashable {}
+extension JentisSDK.TrackConfig.Environment : Swift.RawRepresentable {}
