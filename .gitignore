@@ -5,3 +5,4 @@ JentisSDK.xcframework/.DS_Store
 JentisSDK.xcframework/ios-arm64/.DS_Store
 JentisSDK.xcframework/ios-arm64_x86_64-simulator/.DS_Store
 *.xcuserstate
+*.xcbkptlist

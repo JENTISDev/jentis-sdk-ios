@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class Service {
+class Service {
 
     private let session: URLSession
     
@@ -15,36 +15,6 @@ final class Service {
         self.session = session
     }
 
-    // Method to send a string
-    public func sendString(_ myString: String) async throws {
-        let trackConfig = TrackConfig.shared
-        let urlString = "https://\(trackConfig.trackDomain)/"
-        
-        guard let url = URL(string: urlString) else {
-            throw ServiceError.invalidURL
-        }
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        let body: [String: String] = ["myString": myString]
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: body, options: [])
-        } catch {
-            throw ServiceError.invalidRequestBody
-        }
-        
-        let (data, response) = try await session.data(for: request)
-        
-        guard let httpResponse = response as? HTTPURLResponse, (200...299).contains(httpResponse.statusCode) else {
-            throw ServiceError.invalidResponse
-        }
-        
-        // Handle response data if needed, currently it's unused.
-    }
-    
     // Method to send ConsentModel
     public func sendConsent(_ consentModel: ConsentModel) async throws {
         try await sendObject(consentModel)

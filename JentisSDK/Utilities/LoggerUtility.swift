@@ -20,26 +20,26 @@ final class LoggerUtility {
     
     // Log a debug message
     func logDebug(_ message: String) {
-        logger.debug("\(message, privacy: .public)")  // Debug level logs
+        logger.debug("\(message, privacy: .public)")
     }
 
     // Log an info message
     func logInfo(_ message: String) {
-        logger.info("\(message, privacy: .public)")   // Info level logs
+        logger.info("\(message, privacy: .public)")
     }
 
     // Log a warning message
     func logWarning(_ message: String) {
-        logger.warning("\(message, privacy: .public)")  // Warning level logs
+        logger.warning("\(message, privacy: .public)")
     }
 
     // Log an error message
     func logError(_ message: String) {
-        logger.error("\(message, privacy: .public)")   // Error level logs
+        logger.error("\(message, privacy: .public)")
     }
 
     // Log a critical message
     func logCritical(_ message: String) {
-        logger.critical("\(message, privacy: .public)")  // Critical level logs
+        logger.critical("\(message, privacy: .public)")
     }
 }

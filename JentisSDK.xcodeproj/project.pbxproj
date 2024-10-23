@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		963842022CC9A72B005EF04B /* UserIDUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963842012CC9A72A005EF04B /* UserIDUtilityTests.swift */; };
+		963842042CC9AC3D005EF04B /* UserDefaultsUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963842032CC9AC3B005EF04B /* UserDefaultsUtilityTests.swift */; };
+		963842062CC9ACBB005EF04B /* ConsentIDUtilityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963842052CC9ACBA005EF04B /* ConsentIDUtilityTests.swift */; };
+		963842082CC9AD4A005EF04B /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963842072CC9AD49005EF04B /* ServiceTests.swift */; };
+		9638420A2CC9B456005EF04B /* SessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963842092CC9B456005EF04B /* SessionManagerTests.swift */; };
+		9638420C2CC9B826005EF04B /* JentisServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638420B2CC9B825005EF04B /* JentisServiceTests.swift */; };
+		9638420E2CC9BB16005EF04B /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9638420D2CC9BB14005EF04B /* Action.swift */; };
 		9672145E2CB3FA3500570B9D /* JentisSDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 9672145D2CB3FA3500570B9D /* JentisSDK.docc */; };
 		967214642CB3FA3500570B9D /* JentisSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967214592CB3FA3500570B9D /* JentisSDK.framework */; };
-		967214692CB3FA3500570B9D /* JentisSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214682CB3FA3500570B9D /* JentisSDKTests.swift */; };
 		9672146A2CB3FA3500570B9D /* JentisSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 9672145C2CB3FA3500570B9D /* JentisSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		967214742CB3FB7200570B9D /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214732CB3FB7200570B9D /* Service.swift */; };
 		967214762CB3FBB600570B9D /* TrackingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214752CB3FBB600570B9D /* TrackingService.swift */; };
 		967214782CB3FF0400570B9D /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214772CB3FF0400570B9D /* MockURLProtocol.swift */; };
-		9672147A2CB3FF2400570B9D /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967214792CB3FF2400570B9D /* ServiceTests.swift */; };
 		96E9AD6C2CC7149500B973D7 /* TrackConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9AD6B2CC7149400B973D7 /* TrackConfig.swift */; };
 		96E9AD6E2CC71F7000B973D7 /* TimestampUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9AD6D2CC71F6F00B973D7 /* TimestampUtility.swift */; };
 		96E9AD702CC7202300B973D7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E9AD6F2CC7202200B973D7 /* Config.swift */; };
@@ -39,15 +44,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		963842012CC9A72A005EF04B /* UserIDUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIDUtilityTests.swift; sourceTree = "<group>"; };
+		963842032CC9AC3B005EF04B /* UserDefaultsUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsUtilityTests.swift; sourceTree = "<group>"; };
+		963842052CC9ACBA005EF04B /* ConsentIDUtilityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentIDUtilityTests.swift; sourceTree = "<group>"; };
+		963842072CC9AD49005EF04B /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
+		963842092CC9B456005EF04B /* SessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManagerTests.swift; sourceTree = "<group>"; };
+		9638420B2CC9B825005EF04B /* JentisServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JentisServiceTests.swift; sourceTree = "<group>"; };
+		9638420D2CC9BB14005EF04B /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 		967214592CB3FA3500570B9D /* JentisSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = JentisSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9672145C2CB3FA3500570B9D /* JentisSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JentisSDK.h; sourceTree = "<group>"; };
 		9672145D2CB3FA3500570B9D /* JentisSDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = JentisSDK.docc; sourceTree = "<group>"; };
 		967214632CB3FA3500570B9D /* JentisSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JentisSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		967214682CB3FA3500570B9D /* JentisSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JentisSDKTests.swift; sourceTree = "<group>"; };
 		967214732CB3FB7200570B9D /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		967214752CB3FBB600570B9D /* TrackingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingService.swift; sourceTree = "<group>"; };
 		967214772CB3FF0400570B9D /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
-		967214792CB3FF2400570B9D /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		96E9AD6B2CC7149400B973D7 /* TrackConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackConfig.swift; sourceTree = "<group>"; };
 		96E9AD6D2CC71F6F00B973D7 /* TimestampUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimestampUtility.swift; sourceTree = "<group>"; };
 		96E9AD6F2CC7202200B973D7 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -80,12 +90,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9638420F2CC9BBA0005EF04B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				967214732CB3FB7200570B9D /* Service.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		963842102CC9BBD0005EF04B /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				96E9AD712CC720A300B973D7 /* SessionManager.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		963842112CC9BBE7005EF04B /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				96E9AD6F2CC7202200B973D7 /* Config.swift */,
+				96E9AD6B2CC7149400B973D7 /* TrackConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 		9672144F2CB3FA3500570B9D = {
 			isa = PBXGroup;
 			children = (
 				9672145B2CB3FA3500570B9D /* JentisSDK */,
-				967214732CB3FB7200570B9D /* Service.swift */,
-				967214792CB3FF2400570B9D /* ServiceTests.swift */,
 				967214672CB3FA3500570B9D /* JentisSDKTests */,
 				9672145A2CB3FA3500570B9D /* Products */,
 			);
@@ -103,14 +136,14 @@
 		9672145B2CB3FA3500570B9D /* JentisSDK */ = {
 			isa = PBXGroup;
 			children = (
-				96E9AD712CC720A300B973D7 /* SessionManager.swift */,
-				96E9AD6F2CC7202200B973D7 /* Config.swift */,
-				96E9AD6B2CC7149400B973D7 /* TrackConfig.swift */,
-				96FBA5BD2CB903E80045C096 /* Utilities */,
+				963842112CC9BBE7005EF04B /* Config */,
+				963842102CC9BBD0005EF04B /* Session */,
 				96FBA5B82CB8FE8D0045C096 /* Model */,
+				96FBA5BD2CB903E80045C096 /* Utilities */,
+				9638420F2CC9BBA0005EF04B /* Network */,
+				967214752CB3FBB600570B9D /* TrackingService.swift */,
 				9672145C2CB3FA3500570B9D /* JentisSDK.h */,
 				9672145D2CB3FA3500570B9D /* JentisSDK.docc */,
-				967214752CB3FBB600570B9D /* TrackingService.swift */,
 			);
 			path = JentisSDK;
 			sourceTree = "<group>";
@@ -118,7 +151,12 @@
 		967214672CB3FA3500570B9D /* JentisSDKTests */ = {
 			isa = PBXGroup;
 			children = (
-				967214682CB3FA3500570B9D /* JentisSDKTests.swift */,
+				9638420B2CC9B825005EF04B /* JentisServiceTests.swift */,
+				963842092CC9B456005EF04B /* SessionManagerTests.swift */,
+				963842072CC9AD49005EF04B /* ServiceTests.swift */,
+				963842052CC9ACBA005EF04B /* ConsentIDUtilityTests.swift */,
+				963842032CC9AC3B005EF04B /* UserDefaultsUtilityTests.swift */,
+				963842012CC9A72A005EF04B /* UserIDUtilityTests.swift */,
 				967214772CB3FF0400570B9D /* MockURLProtocol.swift */,
 			);
 			path = JentisSDKTests;
@@ -127,6 +165,7 @@
 		96FBA5B82CB8FE8D0045C096 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9638420D2CC9BB14005EF04B /* Action.swift */,
 				96FBA5B92CB8FE970045C096 /* ConsentModel.swift */,
 				96FBA5BB2CB8FFB90045C096 /* DataSubmissionModel.swift */,
 			);
@@ -268,6 +307,7 @@
 				96E9AD742CC72D1800B973D7 /* UserDefaultsUtility.swift in Sources */,
 				96FBA5C32CBE1F3E0045C096 /* UserIDUtility.swift in Sources */,
 				96E9AD762CC732EB00B973D7 /* LoggerUtility.swift in Sources */,
+				9638420E2CC9BB16005EF04B /* Action.swift in Sources */,
 				967214742CB3FB7200570B9D /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,9 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				967214692CB3FA3500570B9D /* JentisSDKTests.swift in Sources */,
-				9672147A2CB3FF2400570B9D /* ServiceTests.swift in Sources */,
+				963842062CC9ACBB005EF04B /* ConsentIDUtilityTests.swift in Sources */,
+				9638420A2CC9B456005EF04B /* SessionManagerTests.swift in Sources */,
+				963842042CC9AC3D005EF04B /* UserDefaultsUtilityTests.swift in Sources */,
+				963842022CC9A72B005EF04B /* UserIDUtilityTests.swift in Sources */,
 				967214782CB3FF0400570B9D /* MockURLProtocol.swift in Sources */,
+				9638420C2CC9B826005EF04B /* JentisServiceTests.swift in Sources */,
+				963842082CC9AD4A005EF04B /* ServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

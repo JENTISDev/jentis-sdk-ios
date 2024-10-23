@@ -6,86 +6,47 @@
 //
 
 import Foundation
-import Security
 
 class UserIDUtility {
-
     private let userIDKey: String
     
-    // Initializer to accept the key as a parameter
     init(userIDKey: String) {
         self.userIDKey = userIDKey
     }
     
-    // Function to generate UUID similar to the uuidv4 function
+    // Function to generate UUID
     private func generateUUID() -> String {
         return UUID().uuidString.lowercased()
     }
-
-    // Function to store User ID in Keychain
-    private func storeUserIDInKeychain(_ userID: String) {
-        let data = Data(userID.utf8)
-        
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: userIDKey,
-            kSecValueData as String: data
-        ]
-        
-        // Add the new User ID to the Keychain
-        let status = SecItemAdd(query as CFDictionary, nil)
-        
-        if status == errSecSuccess {
-            LoggerUtility.shared.logInfo("User ID successfully stored in Keychain with key: \(userIDKey).")
-        } else {
-            LoggerUtility.shared.logError("Error saving User ID to Keychain with key \(userIDKey): \(status)")
-        }
+    
+    // Function to store User ID in UserDefaults
+    private func storeUserIDInUserDefaults(_ userID: String) {
+        UserDefaultsUtility.saveSimple(userID, forKey: userIDKey)
+        LoggerUtility.shared.logInfo("User ID successfully stored in UserDefaults with key: \(userIDKey).")
     }
     
-    // Function to retrieve User ID from Keychain
-    private func retrieveUserIDFromKeychain() -> String? {
-        let query: [String: Any] = [
-            kSecClass as String: kSecClassGenericPassword,
-            kSecAttrAccount as String: userIDKey,
-            kSecReturnData as String: kCFBooleanTrue!,
-            kSecMatchLimit as String: kSecMatchLimitOne
-        ]
-        
-        var item: CFTypeRef?
-        let status = SecItemCopyMatching(query as CFDictionary, &item)
-        
-        if status == errSecSuccess, let data = item as? Data, let userID = String(data: data, encoding: .utf8) {
-            LoggerUtility.shared.logInfo("User ID successfully retrieved from Keychain with key: \(userIDKey).")
+    // Function to retrieve User ID from UserDefaults
+    private func retrieveUserIDFromUserDefaults() -> String? {
+        if let userID = UserDefaultsUtility.getSimple(String.self, forKey: userIDKey) {
+            LoggerUtility.shared.logInfo("User ID successfully retrieved from UserDefaults with key: \(userIDKey).")
             return userID
         } else {
-            LoggerUtility.shared.logWarning("No User ID found in Keychain with key \(userIDKey) or error retrieving it: \(status)")
+            LoggerUtility.shared.logWarning("No User ID found in UserDefaults with key \(userIDKey).")
+            return nil
         }
-        
-        return nil
     }
     
     // Function to retrieve or generate the User ID
-    func getUserID() -> String {
-        // Try to retrieve the User ID from Keychain
-        if let storedUserID = retrieveUserIDFromKeychain() {
-            LoggerUtility.shared.logDebug("User ID retrieved with key \(userIDKey): \(storedUserID)")
-            return storedUserID
+    func getUserIDWithAction() -> (String, Action) {
+        // Try to retrieve the User ID from UserDefaults
+        if let storedUserID = retrieveUserIDFromUserDefaults() {
+            return (storedUserID, .update)
         }
         
         // If User ID does not exist, generate a new one
         let newUserID = generateUUID()
-        LoggerUtility.shared.logInfo("Generated new User ID: \(newUserID)")
-        
-        // Store the new User ID in Keychain
-        storeUserIDInKeychain(newUserID)
-        
-        return newUserID
-    }
-    
-    // Function to set User ID, which will automatically manage the User ID generation
-    func setUserID() {
-        let userID = getUserID()
-        // Additional logic for handling user identification can be added here
-        LoggerUtility.shared.logInfo("User ID set with ID: \(userID) and key: \(userIDKey)")
+        storeUserIDInUserDefaults(newUserID)
+        return (newUserID, .new)
     }
 }
+

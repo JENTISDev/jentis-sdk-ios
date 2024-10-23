@@ -25,14 +25,13 @@ public class JentisService {
 
 public class TrackingService {
     private static var instance: TrackingService?
-    
+
     public static func initialize() {
         guard instance == nil else {
             LoggerUtility.shared.logWarning("TrackingService is already initialized")
             return
         }
 
-        // Pass the container from TrackConfig as the key for UserIDUtility
         let trackConfig = TrackConfig.shared
         let userIDUtility = UserIDUtility(userIDKey: trackConfig.container)
         let consentIDUtility = ConsentIDUtility(consentIDKey: trackConfig.container)
@@ -40,7 +39,7 @@ public class TrackingService {
         instance = TrackingService(userIDUtility: userIDUtility, consentIDUtility: consentIDUtility)
         LoggerUtility.shared.logInfo("TrackingService initialized successfully with container: \(trackConfig.container)")
     }
-    
+
     public static var shared: TrackingService {
         guard let instance = instance else {
             LoggerUtility.shared.logError("TrackingService is not initialized. Call JentisService.configure(with:) first.")
@@ -48,9 +47,9 @@ public class TrackingService {
         }
         return instance
     }
-    
+
     private let trackConfig = TrackConfig.shared
-    private let service = Service()
+    private var service = Service()
     private let userAgent = UserAgentUtility.userAgent
     private let consentUtility: ConsentIDUtility
     private let userIDUtility: UserIDUtility
@@ -60,11 +59,15 @@ public class TrackingService {
         self.consentUtility = consentIDUtility
     }
 
+    internal func setService(_ mockService: Service) {
+        self.service = mockService
+    }
+
     public func sendConsentModel() async throws {
         LoggerUtility.shared.logInfo("Preparing to send consent model")
         
-        let consentID = consentUtility.getConsentID()
-        let userID = userIDUtility.getUserID()
+        let (userID, userAction) = userIDUtility.getUserIDWithAction()
+        let (consentID, consentAction) = consentUtility.getConsentIDWithAction()
         
         let consentModel = ConsentModel(
             system: ConsentModel.System(
@@ -83,11 +86,11 @@ public class TrackingService {
                 identifier: ConsentModel.DataClass.Identifier(
                     user: ConsentModel.DataClass.Identifier.User(
                         id: userID,
-                        action: Config.Action.new.rawValue
+                        action: userAction.rawValue
                     ),
                     consent: ConsentModel.DataClass.Identifier.ConsentID(
                         id: consentID,
-                        action: Config.Action.new.rawValue
+                        action: consentAction.rawValue
                     )
                 ),
                 consent: ConsentModel.DataClass.Consent(
@@ -110,12 +113,11 @@ public class TrackingService {
         LoggerUtility.shared.logInfo("Consent model sent successfully")
     }
 
-    // Send Data Submission Model with Logging
     public func sendDataSubmissionModel() async throws {
         LoggerUtility.shared.logInfo("Preparing to send data submission model")
 
-        let userID = userIDUtility.getUserID()
-        let sessionID = SessionManager.startOrResumeSession()
+        let (userID, userAction) = userIDUtility.getUserIDWithAction()
+        let (sessionID, sessionAction) = SessionManager.startOrResumeSession()
         
         let dataSubmissionModel = DataSubmissionModel(
             system: DataSubmissionModel.System(
@@ -140,11 +142,11 @@ public class TrackingService {
                 identifier: DataSubmissionModel.DataClass.Identifier(
                     user: DataSubmissionModel.DataClass.Identifier.User(
                         id: userID,
-                        action: Config.Action.new.rawValue
+                        action: userAction.rawValue
                     ),
                     session: DataSubmissionModel.DataClass.Identifier.Session(
                         id: sessionID,
-                        action: Config.Action.new.rawValue
+                        action: sessionAction.rawValue
                     )
                 ),
                 variables: DataSubmissionModel.DataClass.Variables(

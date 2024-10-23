@@ -24,7 +24,6 @@ public class SessionManager {
     }
 
     // MARK: - Handle App Lifecycle Events
-
     @objc private static func appDidEnterBackground() {
         LoggerUtility.shared.logInfo("App entered background")
         // Save the last active timestamp when the app goes to the background
@@ -50,44 +49,47 @@ public class SessionManager {
 
     // MARK: - Session Management
 
-    /// Starts a new session or resumes the current one if within the timeout period
-    public static func startOrResumeSession() -> String {
+    public static func startOrResumeSession() -> (String, Action) {
         let currentTime = Date().timeIntervalSince1970
         
-        // If the last activity was more than the configured session timeout, start a new session
         if (currentTime - lastActiveTimestamp) > sessionTimeoutInSeconds || currentSessionID == nil {
             startNewSession()
+            return (currentSessionID!, .new)
         } else {
-            LoggerUtility.shared.logDebug("Session resumed with ID: \(currentSessionID!)")
+            lastActiveTimestamp = currentTime
+            return (currentSessionID!, .update)
         }
-
-        // Update the last active timestamp
-        lastActiveTimestamp = currentTime
-        
-        return currentSessionID!
     }
-    
-    /// Starts a new session by generating a new session ID
+
     private static func startNewSession() {
         currentSessionID = generateSessionID()
         LoggerUtility.shared.logInfo("New session started with ID: \(currentSessionID!)")
         lastActiveTimestamp = Date().timeIntervalSince1970
     }
 
-    /// Generates a unique session ID (e.g., using UUID)
     private static func generateSessionID() -> String {
         return UUID().uuidString
     }
-    
-    /// Manually end the current session (optional)
+
     public static func endSession() {
         LoggerUtility.shared.logInfo("Session ended with ID: \(currentSessionID ?? "unknown")")
         currentSessionID = nil
     }
-    
-    /// Updates the last activity timestamp to prevent session timeout
-    public static func updateLastActiveTimestamp() {
-        lastActiveTimestamp = Date().timeIntervalSince1970
-        LoggerUtility.shared.logDebug("Last active timestamp updated")
+
+    // MARK: - Accessors for Testing
+    public static func setLastActiveTimestamp(_ timestamp: TimeInterval) {
+        lastActiveTimestamp = timestamp
+    }
+
+    public static func getLastActiveTimestamp() -> TimeInterval {
+        return lastActiveTimestamp
+    }
+
+    public static func setCurrentSessionID(_ sessionID: String?) {
+        currentSessionID = sessionID
+    }
+
+    public static func getCurrentSessionID() -> String? {
+        return currentSessionID
     }
 }
